@@ -23,7 +23,7 @@ interface DivideConfig {
  * Basic usage:
  * ```
  * divide('str')
- * // Returns '---'
+ * // Returns 'str\n---'
  * ```
  */
 export function divide(input: Input, config: DivideConfig): string {
