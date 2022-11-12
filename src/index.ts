@@ -42,10 +42,12 @@ export function divide(input: Input, config: DivideConfig): string {
   /** Merge configs. */
   Object.assign(settings, config);
 
-  const prefix = input && !settings.omitSource ? `${input}` : '';
-  const len = (settings.width || input?.length) + prefix.length;
-  if (prefix) {
-    prefix.concat(prefix, '\n');
-  }
-  return prefix.padEnd(len, settings.character);
+  const { omitSource, width, character } = settings;
+
+  const prefix = input && !omitSource ? `${input}` : '';
+  const len = width || input?.length;
+  const newline = prefix.length && len > 0 ? '\n' : '';
+  const divider = ''.padEnd(len, character);
+
+  return prefix.concat(newline, divider);
 }

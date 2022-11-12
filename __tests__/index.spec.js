@@ -2,7 +2,7 @@ import { divide } from '../src/index.ts';
 
 describe('Divide', () => {
   it('should return a repeated string (X) long', () => {
-    const output = divide('str', {});
+    const output = divide('str');
 
     expect(output).toEqual('str\n---');
   });
@@ -13,6 +13,14 @@ describe('Divide', () => {
     });
 
     expect(output).toEqual('str\n+++');
+  });
+
+  it('should return a full pattern of characters', () => {
+    const output = divide('str', {
+      character: '•–',
+    });
+
+    expect(output).toEqual('str\n•–•');
   });
 
   it('should return a set length of characters, regardless of string size', () => {
