@@ -1,19 +1,21 @@
 {
   "name": "@afoot/divide",
   "version": "0.1.0",
-  "description": "",
-  "author": "Matthew Smith @niftinessafoot",
+  "description": "Add a lil’ divider string beneath a source string. Use it to create separation in console logs or stdout.",
+  "author": "Matthew Smith <code@niftinessafoot.com> (https://www.niftinessafoot.com)",
   "keywords": [
     "module",
-    "typescript"
+    "typescript",
+    "string"
   ],
   "entry": "index.ts",
   "license": "MIT",
   "scripts": {
     "build": "rollup -c rollup.config.js -i src/index.ts",
+    "prebuild": "npm run clean && npm run types",
     "test": "jest",
     "test:coverage": "jest --coverage",
-    "clean": "rm -f dist/*",
+    "clean": "rm -rf dist/*",
     "types": "tsc",
     "docs": "typedoc"
   },
@@ -22,10 +24,13 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/niftinessafoot/"
+    "url": "https://github.com/niftinessafoot/divide"
   },
+  "homepage": "https://github.com/niftinessafoot/divide",
   "type": "module",
-  "files": [],
+  "files": [
+    "dist/"
+  ],
   "types": "dist/types/index.d.ts",
   "devDependencies": {
     "@babel/cli": "^7.19.3",
